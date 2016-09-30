@@ -1,7 +1,10 @@
 /**
  * Created by JeKriMo on 9/28/2016.
  */
+
+import java.util.Random;
 import java.util.Scanner;
+
 public class AnewTest {
     public static void main(String[] args){
 //        System.out.println("Tell Me THings!");
@@ -70,7 +73,32 @@ public class AnewTest {
 //                System.out.println("this one is " + (i * a));
 //            }
 //        }
-        
+        int guess;
+        Random randomGenerator = new Random();
+        int answer = randomGenerator.nextInt(100);
+        Scanner userGuess = new Scanner(System.in);
+        System.out.println("Welcome to number game! I'm thinking of a number between 1 and 100. What's the number?");
+        answer = randomGenerator.nextInt(100);
+        guess = userGuess.nextInt();
+        System.out.println("works, your guess is: " + guess);
+        System.out.println("well now, we will just see about that won't we....");
+
+        while(answer != guess){
+            if(answer > guess){
+                System.out.println("Nope! Too low do do.");
+                System.out.print("Guess again if you dare.");
+                guess = userGuess.nextInt();
+            }
+            else if(answer < guess){
+                System.out.println("Nope! Too high ho ho.");
+                System.out.print("Guess again if you dare.");
+                guess = userGuess.nextInt();
+            }
+
+        }
+        if(answer == guess){
+            System.out.println("Wow! You actually did it. I am a little surprised, I'll admit it.");
+        }
     }
 }
 
